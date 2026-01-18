@@ -22,6 +22,11 @@ mostrarTexto = function(idComponente, mensaje){
     componente.innerText = mensaje;
 }
 
+mostrarImagen = function(idComponente, rutaImagen) {
+    let componente = document.getElementById(idComponente);
+    componente.src = rutaImagen;
+}
+
 saludar = function(){
     //recuperar valor de caja de texto
     let nombre = recuperarTexto("txtNombre");
@@ -34,4 +39,6 @@ saludar = function(){
     //mostrar mensaje
     let mensajeBienvenida = "Bienvenido "+ nombre + " " + apellido;
     mostrarTexto("lblResultado", mensajeBienvenida);
+    //mostrar imagen
+    mostrarImagen("lblImagen", "img/rafa.gif")
 }
