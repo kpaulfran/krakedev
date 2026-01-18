@@ -2,7 +2,7 @@ recuperarTexto = function(idComponente){
     let componente;
     let valorIngresado;
     componente = document.getElementById(idComponente);
-    valorIngresado = componente.ariaValueMax;
+    return valorIngresado = componente.value;
 }
 
 recuperarInt = function(idComponente){
@@ -17,6 +17,11 @@ recuperarFloat = function(idComponente){
     return valorFlotante;
 }
 
+mostrarTexto = function(idComponente, mensaje){
+    let componente = document.getElementById(idComponente);
+    componente.innerText = mensaje;
+}
+
 saludar = function(){
     //recuperar valor de caja de texto
     let nombre = recuperarTexto("txtNombre");
@@ -26,4 +31,7 @@ saludar = function(){
     let edad = recuperarInt("txtEdad");
     //recuperar estatura
     let estatura = recuperarFloat("txtEstatura");
+    //mostrar mensaje
+    let mensajeBienvenida = "Bienvenido "+ nombre + " " + apellido;
+    mostrarTexto("lblResultado", mensajeBienvenida);
 }
